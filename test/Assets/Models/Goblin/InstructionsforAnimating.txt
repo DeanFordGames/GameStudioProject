@@ -1,0 +1,11 @@
+Import the goblin
+Select it in your assets
+In the inspector, select Rig
+Set the animation type to "Humanoid"
+Click apply
+Use Mixamo (It's free) to download any animation you want, download it WITHOUT skin
+Import the animation from Mixamo
+Select it in your assets
+Select rig and set animation type to humanoid
+Use the goblin's avatar as the source
+Now you can drag animations into the goblin's animation controller 
