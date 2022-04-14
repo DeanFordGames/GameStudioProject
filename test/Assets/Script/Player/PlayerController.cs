@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
 
     private Transform cam;
 
-    private int forwardMove = 0;
-    private int sideMove = 0;
     private float moveSpeed = 20f;
     private float jumpForce = 10f;
     private float jumpTime = 0.2f;
@@ -48,22 +46,22 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             rb.AddForce(moveSpeed * transform.forward);
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
             rb.AddForce(moveSpeed * -transform.forward);
         }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(moveSpeed * -transform.right);
-        }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             rb.AddForce(moveSpeed * transform.right);
+        }
+        else if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce(moveSpeed * -transform.right);
         }
 
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
