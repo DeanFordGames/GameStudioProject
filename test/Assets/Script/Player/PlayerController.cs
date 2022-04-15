@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
+    private Animator anim;
 
     private Transform cam;
 
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
         cam = GameObject.Find("Main Camera").transform;
     }
 
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         playerMove();
         playerAim();
+        playerAttack();
     }
 
     private void FixedUpdate()
@@ -78,6 +81,19 @@ public class PlayerController : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
 
         this.transform.rotation = this.transform.rotation * Quaternion.Euler(0, mouseX * cameraSpeed * Time.deltaTime, 0);
+    }
+
+    private void playerAttack()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Sword And Shield Idle") && anim.GetBool("isAttacking") == true)
+        {
+            anim.SetBool("isAttacking", false);
+        }
+
+        if (anim.GetBool("isAttacking") == false && Input.GetMouseButtonDown(0))
+        {
+            anim.SetBool("isAttacking", true);
+        }
     }
 
     private void OnTriggerStay(Collider c)
