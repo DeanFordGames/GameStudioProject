@@ -675,6 +675,8 @@ GameObject:
   - component: {fileID: 7924423102733067969}
   - component: {fileID: 8861365123186213984}
   - component: {fileID: 586955227821596847}
+  - component: {fileID: 8144881711822749060}
+  - component: {fileID: 4969244917807675606}
   m_Layer: 0
   m_Name: player_hammer
   m_TagString: Untagged
@@ -745,6 +747,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8144881711822749060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5498776339537803762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014207219, y: 0.007825843, z: 0.022950834}
+  m_Center: {x: 0.0000000066830075, y: -1.7192782e-10, z: 0.0030589846}
+--- !u!114 &4969244917807675606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5498776339537803762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006edf30baf51a64383d5f9ce4cdf0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5598548674451810600
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,6 @@ public class Goblin : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
         rb = gameObject.GetComponent<Rigidbody>();
-
     }
 
     private void Update()
