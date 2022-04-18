@@ -25,7 +25,7 @@ public class HammerAttack : MonoBehaviour
 
     private void OnTriggerStay(Collider c)
     {
-        if (anim.GetBool("isAttacking") == true && hitOnce == false)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward") && hitOnce == false)
         {
             EnemyHealth hit = c.gameObject.GetComponent<EnemyHealth>();
             if (hit != null)
