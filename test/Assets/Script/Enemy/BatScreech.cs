@@ -25,6 +25,9 @@ public class BatScreech : MonoBehaviour
         if (c.gameObject == gameObject)
             return;
 
+        if (c.gameObject.name.Contains("hammer"))
+            return;
+
         PlayerStats hit = c.gameObject.GetComponent<PlayerStats>();
         if (hit != null)
             hit.hitPlayer(damage);

@@ -10,6 +10,15 @@ public class PlayerStats : MonoBehaviour
 
     private int health = 100;
 
+    [SerializeField]
+    private GameObject deathScreen;
+
+    private void Awake()
+    {
+        deathScreen = GameObject.Find("DeathScreen");
+        deathScreen.SetActive(false);
+    }
+
     private void Start()
     {
         healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
@@ -27,6 +36,7 @@ public class PlayerStats : MonoBehaviour
         healthText.text = health + " / 100";
         if (health <= 0)
         {
+            deathScreen.SetActive(true);
             Destroy(gameObject);
         }
     }

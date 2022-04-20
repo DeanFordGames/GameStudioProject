@@ -30,44 +30,49 @@ public class FlyingEnemy : MonoBehaviour
 
     private void Update()
     {
-        distance = Vector3.Distance(gameObject.transform.position, player.position);
-        if (flap == false)
+        if (player != null)
         {
-            if (flapTimer <= 0)
+            distance = Vector3.Distance(gameObject.transform.position, player.position);
+            if (flap == false)
             {
-                flap = true;
-                flapTimer = 1f;
-            }
-            else
-            {
-                flapTimer -= Time.deltaTime;
-            }
-        }
-
-        if(distance <= 20)
-        {
-            chase = true;
-        }else if(distance >= 60)
-        {
-            chase = false;
-        }
-
-        if(chase == true)
-        {
-            if (distance > 5)
-            {
-                gameObject.transform.position += transform.forward * moveSpeed * Time.deltaTime;
+                if (flapTimer <= 0)
+                {
+                    flap = true;
+                    flapTimer = 1f;
+                }
+                else
+                {
+                    flapTimer -= Time.deltaTime;
+                }
             }
 
-            gameObject.transform.LookAt(player);
+            if (distance <= 20)
+            {
+                chase = true;
+            }
+            else if (distance >= 60)
+            {
+                chase = false;
+            }
 
-            if (shootTimer <= 0)
+            if (chase == true)
             {
-                shootTimer = 2f;
-                Instantiate(screech, shootPoint.position, transform.rotation);
-            }else
-            {
-                shootTimer -= Time.deltaTime;
+                if (distance > 5)
+                {
+                    gameObject.transform.position += transform.forward * moveSpeed * Time.deltaTime;
+                }
+
+                gameObject.transform.LookAt(player);
+
+                if (shootTimer <= 0)
+                {
+                    shootTimer = 2f;
+                    Instantiate(screech, shootPoint.position, transform.rotation);
+                }
+                else
+                {
+                    shootTimer -= Time.deltaTime;
+                }
             }
         }
     }
