@@ -105,7 +105,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 51f6d5f3d3b2114498dd47d6f5b59053, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,10 +148,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2444647090652221698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85844caa5ce4c064b9b14461c028917e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9baf764f76d6c2f4d8a02bdf948a00ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   dirA: 0
 --- !u!65 &8760303644703311946
 BoxCollider:
