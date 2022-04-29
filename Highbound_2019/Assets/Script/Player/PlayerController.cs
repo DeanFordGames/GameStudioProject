@@ -67,7 +67,15 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(moveSpeed * -transform.right);
         }
 
+        float y = rb.velocity.y;
+
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
+
+        Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
+        localVelocity.y = y;
+
+        rb.velocity = transform.TransformDirection(localVelocity);
+
     }
 
     private void playerMove()

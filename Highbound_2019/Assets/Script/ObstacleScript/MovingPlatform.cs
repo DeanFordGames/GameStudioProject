@@ -8,7 +8,7 @@ public class MovingPlatform : MonoBehaviour
     private Transform posB;
 
     [SerializeField]
-    private float speed = 2f;
+    private float speed = 0.1f;
     [SerializeField]
     private bool dirA = false;
 
@@ -22,16 +22,18 @@ public class MovingPlatform : MonoBehaviour
     {
         if (dirA == false)
         {
-            gameObject.transform.position += transform.right * speed * Time.deltaTime;    
+            gameObject.transform.position = Vector3.Lerp(this.transform.position, posB.position, speed);    
         }else
         {
-            gameObject.transform.position += -transform.right * speed * Time.deltaTime;
+            gameObject.transform.position = Vector3.Lerp(this.transform.position, posA.position, speed);
         }
 
-        if(gameObject.transform.position.x >= posB.position.x)
+        if(gameObject.transform.position.x + 1 >= posB.position.x && gameObject.transform.position.x - 1 <= posB.position.x &&
+            gameObject.transform.position.y + 1 >= posB.position.y && gameObject.transform.position.y - 1 <= posB.position.y)
         {
             dirA = true;
-        }else if(gameObject.transform.position.x <= posA.position.x)
+        }else if(gameObject.transform.position.x + 1 >= posA.position.x && gameObject.transform.position.x - 1 <= posA.position.x &&
+            gameObject.transform.position.y + 1 >= posA.position.y && gameObject.transform.position.y - 1 <= posA.position.y)
         {
             dirA = false;
         }

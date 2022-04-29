@@ -278,7 +278,7 @@ HingeJoint:
   m_UseMotor: 1
   m_Motor:
     targetVelocity: 300
-    force: 200
+    force: 250
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -430,8 +430,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -160
-    max: 160
+    min: -130
+    max: 130
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -578,8 +578,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -160
-    max: 160
+    min: -130
+    max: 130
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -726,8 +726,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -160
-    max: 160
+    min: -130
+    max: 130
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -874,8 +874,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -160
-    max: 160
+    min: -130
+    max: 130
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -1022,8 +1022,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -160
-    max: 160
+    min: -130
+    max: 130
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
