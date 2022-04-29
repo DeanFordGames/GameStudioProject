@@ -9,16 +9,20 @@ public class PlayerController : MonoBehaviour
 
     private Transform cam;
 
+    [SerializeField]
     private float moveSpeed = 20f;
+    [SerializeField]
     private float jumpForce = 10f;
     private float jumpTime = 0.2f;
+    [SerializeField]
     private float maxVelocity = 10f;
 
     public bool isGrounded = true;
     [SerializeField]private bool jump = false;
 
     private float mouseX = 0;
-    private float cameraSpeed = 500f;
+    [SerializeField]
+    private float cameraSpeed = 900f;
     private Vector3 camF;
     private Vector3 camR;
 
@@ -75,20 +79,23 @@ public class PlayerController : MonoBehaviour
         localVelocity.y = y;
 
         rb.velocity = transform.TransformDirection(localVelocity);
-
+        
     }
 
     private void playerMove()
     {
         if (jump == false && isGrounded == true)
             jump = Input.GetKeyDown(KeyCode.Space);
+
     }
 
     private void playerAim()
     {
         mouseX = Input.GetAxis("Mouse X");
 
-        this.transform.rotation = this.transform.rotation * Quaternion.Euler(0, mouseX * cameraSpeed * Time.deltaTime, 0);
+        Quaternion rot = this.transform.rotation * Quaternion.Euler(0, mouseX * cameraSpeed * Time.deltaTime, 0);
+
+        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, rot, 0.1f);
     }
 
     private void playerAttack()

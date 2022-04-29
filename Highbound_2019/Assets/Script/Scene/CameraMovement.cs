@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     private Transform player;
     private Transform camPos;
-    private float lerpSpeed = 0.01f;
+    private float lerpSpeed = 0.1f;
 
     private void Start()
     {
