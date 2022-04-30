@@ -42,7 +42,9 @@ public class PlayerController : MonoBehaviour
         playerMove();
         playerAim();
         playerAttack();
-        if (rb.velocity != Vector3.zero)
+
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
             anim.SetBool("isMoving", true);
         else
             anim.SetBool("isMoving", false);

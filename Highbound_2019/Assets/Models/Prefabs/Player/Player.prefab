@@ -170,8 +170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f68bd5a16dc951418a409b2736e38cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 20
+  jumpForce: 10
+  maxVelocity: 10
   isGrounded: 1
   jump: 0
+  cameraSpeed: 900
 --- !u!54 &372929015769095382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211,10 +215,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.57519734
+  m_Height: 2.982397
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.0017012358, y: 0.49119854, z: 0}
 --- !u!114 &4293841661234437875
 MonoBehaviour:
   m_ObjectHideFlags: 0
