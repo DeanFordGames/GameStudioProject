@@ -53,5 +53,8 @@ public class ModelRotation : MonoBehaviour
         }
 
         transform.rotation = Quaternion.RotateTowards(this.transform.rotation, movingRotation, lerpSpeed * Time.deltaTime);
+
+        if (transform.localPosition.y != -0.9f)
+            transform.localPosition = new Vector3(transform.localPosition.x, -0.9f, transform.localPosition.z);
     }
 }

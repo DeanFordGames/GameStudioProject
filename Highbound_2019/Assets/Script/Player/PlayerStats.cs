@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
     private Slider healthBar;
     private Text healthText;
 
+    private Animator anim;
+
     private int health = 100;
 
     [SerializeField]
@@ -21,6 +23,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
         healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
         healthBar.maxValue = health;
         healthBar.minValue = 0;
@@ -36,8 +39,14 @@ public class PlayerStats : MonoBehaviour
         healthText.text = health + " / 100";
         if (health <= 0)
         {
-            deathScreen.SetActive(true);
-            Destroy(gameObject);
+            anim.SetBool("isDead", true);
+            Invoke("death", 1.5f);
         }
+    }
+
+    private void death()
+    {
+        deathScreen.SetActive(true);
+        Destroy(gameObject);
     }
 }

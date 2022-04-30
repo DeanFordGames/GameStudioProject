@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
         playerMove();
         playerAim();
         playerAttack();
+        if (rb.velocity != Vector3.zero)
+            anim.SetBool("isMoving", true);
+        else
+            anim.SetBool("isMoving", false);
+
     }
 
     private void FixedUpdate()
@@ -51,6 +56,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
             jump = false;
             isGrounded = false;
+            anim.SetBool("isJumping", false);
         }
 
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
@@ -85,7 +91,15 @@ public class PlayerController : MonoBehaviour
     private void playerMove()
     {
         if (jump == false && isGrounded == true)
+        {
             jump = Input.GetKeyDown(KeyCode.Space);
+            if (jump == true)
+            {
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Jump"))
+                    anim.Play("Standing Jump", 0, 0f);
+                anim.SetBool("isJumping", true);
+            }
+        }
 
     }
 
@@ -100,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
     private void playerAttack()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Sword And Shield Idle") && anim.GetBool("isAttacking") == true)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Idle") && anim.GetBool("isAttacking") == true)
         {
             anim.SetBool("isAttacking", false);
         }

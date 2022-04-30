@@ -17,7 +17,7 @@ public class HammerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Sword And Shield Idle"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Idle"))
         {
             hitOnce = false;
         }
@@ -25,7 +25,7 @@ public class HammerAttack : MonoBehaviour
 
     private void OnTriggerStay(Collider c)
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward") && hitOnce == false)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Horizontal") && hitOnce == false)
         {
             EnemyHealth hit = c.gameObject.GetComponent<EnemyHealth>();
             if (hit != null)
