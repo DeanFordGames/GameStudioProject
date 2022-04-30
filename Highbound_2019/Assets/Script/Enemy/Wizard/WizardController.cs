@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class WizardController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator anim;
+
+    private Transform player;
+
+    private void Start()
     {
-        
+        anim = gameObject.GetComponent<Animator>();
+        player = GameObject.Find("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        float dis = Vector3.Distance(this.transform.position, player.position);
+
+        if(dis < 10)
+        {
+            rotateToPlayer();
+        }
+    }
+
+    private void rotateToPlayer()
+    {
+        var lookPos = player.position - transform.position;
+        lookPos.y = 0.0f;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = rotation;
     }
 }
