@@ -112,15 +112,15 @@ public class PlayerController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y");
         Transform camPos = gameObject.transform.GetChild(1);
 
-        if(camPos.localPosition.y + mouseY * vertCameraSpeed * Time.deltaTime > 6)
+        if(camPos.localPosition.y - mouseY * vertCameraSpeed * Time.deltaTime > 6)
         {
             camPos.localPosition = new Vector3(camPos.localPosition.x, 6, camPos.localPosition.z);
-        }else if(camPos.localPosition.y + mouseY * vertCameraSpeed * Time.deltaTime < 1)
+        }else if(camPos.localPosition.y - mouseY * vertCameraSpeed * Time.deltaTime < 1)
         {
             camPos.localPosition = new Vector3(camPos.localPosition.x, 1, camPos.localPosition.z);
         }else
         {
-            camPos.localPosition = new Vector3(camPos.localPosition.x, camPos.localPosition.y + mouseY * vertCameraSpeed * Time.deltaTime, camPos.localPosition.z);
+            camPos.localPosition = new Vector3(camPos.localPosition.x, camPos.localPosition.y - mouseY * vertCameraSpeed * Time.deltaTime, camPos.localPosition.z);
         }
 
         Quaternion rot = this.transform.rotation * Quaternion.Euler(0, mouseX * cameraSpeed * Time.deltaTime, 0);

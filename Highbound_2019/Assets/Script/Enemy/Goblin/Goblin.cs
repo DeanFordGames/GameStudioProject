@@ -9,11 +9,11 @@ public class Goblin : MonoBehaviour
 
     private float playerDistance = 0;
     private Transform player;
-    private float maxDis = 30;
-    private float minDis = 5;
+    private float maxDis = 8;
+    private float minDis = 3;
 
     private float moveSpeed = 5f;
-    private float attackMoveSpeed = 6f;
+    private float attackMoveSpeed = 3f;
 
     private void Start()
     {
