@@ -18,11 +18,12 @@ public class PlayerController : MonoBehaviour
     private float maxVelocity = 10f;
 
     public bool isGrounded = true;
-    [SerializeField]private bool jump = false;
-
-    private float mouseX = 0;
+    [SerializeField]
+    private bool jump = false;
     [SerializeField]
     private float cameraSpeed = 900f;
+    [SerializeField]
+    private float vertCameraSpeed = 5f;
     private Vector3 camF;
     private Vector3 camR;
 
@@ -107,7 +108,20 @@ public class PlayerController : MonoBehaviour
 
     private void playerAim()
     {
-        mouseX = Input.GetAxis("Mouse X");
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        Transform camPos = gameObject.transform.GetChild(1);
+
+        if(camPos.localPosition.y + mouseY * vertCameraSpeed * Time.deltaTime > 6)
+        {
+            camPos.localPosition = new Vector3(camPos.localPosition.x, 6, camPos.localPosition.z);
+        }else if(camPos.localPosition.y + mouseY * vertCameraSpeed * Time.deltaTime < 1)
+        {
+            camPos.localPosition = new Vector3(camPos.localPosition.x, 1, camPos.localPosition.z);
+        }else
+        {
+            camPos.localPosition = new Vector3(camPos.localPosition.x, camPos.localPosition.y + mouseY * vertCameraSpeed * Time.deltaTime, camPos.localPosition.z);
+        }
 
         Quaternion rot = this.transform.rotation * Quaternion.Euler(0, mouseX * cameraSpeed * Time.deltaTime, 0);
 
