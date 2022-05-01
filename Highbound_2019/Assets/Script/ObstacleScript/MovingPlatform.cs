@@ -8,7 +8,7 @@ public class MovingPlatform : MonoBehaviour
     private Transform posB;
 
     [SerializeField]
-    private float speed = 0.1f;
+    private float speed = 0.01f;
     [SerializeField]
     private bool dirA = false;
 
@@ -22,10 +22,14 @@ public class MovingPlatform : MonoBehaviour
     {
         if (dirA == false)
         {
-            gameObject.transform.position = Vector3.Lerp(this.transform.position, posB.position, speed);    
+            float dis = Vector3.Distance(this.transform.position, posB.position);
+
+            gameObject.transform.position = Vector3.Lerp(this.transform.position, posB.position, speed / dis);    
         }else
         {
-            gameObject.transform.position = Vector3.Lerp(this.transform.position, posA.position, speed);
+            float dis = Vector3.Distance(this.transform.position, posA.position);
+
+            gameObject.transform.position = Vector3.Lerp(this.transform.position, posA.position, speed / dis);
         }
 
         if(gameObject.transform.position.x + 1 >= posB.position.x && gameObject.transform.position.x - 1 <= posB.position.x &&
