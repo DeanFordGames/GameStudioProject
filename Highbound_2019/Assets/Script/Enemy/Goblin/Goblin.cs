@@ -16,6 +16,7 @@ public class Goblin : MonoBehaviour
     private float attackMoveSpeed = 3f;
 
     private EnemyHealth health;
+    private bool dead = false;
 
     private void Start()
     {
@@ -31,33 +32,41 @@ public class Goblin : MonoBehaviour
             return;
 
         if (health.getHealth() <= 0)
-            Destroy(gameObject);
-
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Sword And Shield Idle") && anim.GetBool("isAttacking") == true)
         {
-            anim.SetBool("isAttacking", false);
+            dead = true;
+            Invoke("death", 1.5f);
+            anim.SetBool("isDead", true);
         }
 
-        playerDistance = Vector3.Distance(gameObject.transform.position, player.position);
-
-        if(playerDistance <= maxDis && playerDistance > minDis && anim.GetBool("isAttacking") == false)
+        if(dead == false)
         {
-            anim.SetBool("isMoving", true);
-            rotateToPlayer();
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        }else if(playerDistance > maxDis || playerDistance <= minDis)
-        {
-            anim.SetBool("isMoving", false);
-            if (playerDistance <= minDis)
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Sword And Shield Idle") && anim.GetBool("isAttacking") == true)
             {
-                if (anim.GetBool("isAttacking") == false)
+                anim.SetBool("isAttacking", false);
+            }
+
+            playerDistance = Vector3.Distance(gameObject.transform.position, player.position);
+
+            if (playerDistance <= maxDis && playerDistance > minDis && anim.GetBool("isAttacking") == false)
+            {
+                anim.SetBool("isMoving", true);
+                rotateToPlayer();
+                transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            }
+            else if (playerDistance > maxDis || playerDistance <= minDis)
+            {
+                anim.SetBool("isMoving", false);
+                if (playerDistance <= minDis)
                 {
-                    anim.SetBool("isAttacking", true);
-                    rotateToPlayer();
-                }
-                else
-                {
-                    transform.position += transform.forward * attackMoveSpeed * Time.deltaTime;
+                    if (anim.GetBool("isAttacking") == false)
+                    {
+                        anim.SetBool("isAttacking", true);
+                        rotateToPlayer();
+                    }
+                    else
+                    {
+                        transform.position += transform.forward * attackMoveSpeed * Time.deltaTime;
+                    }
                 }
             }
         }
@@ -69,5 +78,10 @@ public class Goblin : MonoBehaviour
         lookPos.y = 0.0f;
         var rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = rotation;
+    }
+
+    private void death()
+    {
+        Destroy(gameObject);
     }
 }

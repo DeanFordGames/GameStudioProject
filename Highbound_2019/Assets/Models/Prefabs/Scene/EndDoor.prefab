@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8575941115318494609}
   - component: {fileID: 5829674732372955483}
   - component: {fileID: 6953828547153819704}
+  - component: {fileID: 7841089232399632366}
   m_Layer: 0
   m_Name: EndDoor
   m_TagString: Untagged
@@ -94,3 +95,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.46154338, z: 2.8934352}
   m_Center: {x: 0, y: 0.011642485, z: 0.44671762}
+--- !u!114 &7841089232399632366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469575808698200206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74edf8e648ab42f41979d7f8f52bfcda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vicScreen: {fileID: 2709725026563320747, guid: beb9cf610eaf90d44aa7a20056923e6c,
+    type: 3}

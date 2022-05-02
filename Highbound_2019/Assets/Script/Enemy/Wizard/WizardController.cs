@@ -15,6 +15,7 @@ public class WizardController : MonoBehaviour
     private Transform shootPos;
 
     private EnemyHealth health;
+    private bool dead = false;
 
     [SerializeField]
     private GameObject endDoorPrefab;
@@ -31,23 +32,28 @@ public class WizardController : MonoBehaviour
     {
         float dis = Vector3.Distance(this.transform.position, player.position);
 
-        if(health.getHealth() <= 0)
+        if(health.getHealth() <= 0 && dead == false)
         {
-            Instantiate(endDoorPrefab, this.transform.position + new Vector3(0,1,0), Quaternion.Euler(-90,0,0));
-            Destroy(gameObject);
+            dead = true;
+            Invoke("death", 1.5f);
+            anim.SetBool("isDead", true);
         }
 
-        if(dis < 10)
+        if(dead == false)
         {
-            rotateToPlayer();
-            if(shootTimer <= 0.0f)
+            if (dis < 10)
             {
-                anim.SetBool("isAttacking", true);
-                Invoke("shootFireball", 0.5f);
-                shootTimer = shootTimerReset;
-            }else
-            {
-                shootTimer -= Time.deltaTime;
+                rotateToPlayer();
+                if (shootTimer <= 0.0f)
+                {
+                    anim.SetBool("isAttacking", true);
+                    Invoke("shootFireball", 0.5f);
+                    shootTimer = shootTimerReset;
+                }
+                else
+                {
+                    shootTimer -= Time.deltaTime;
+                }
             }
         }
     }
@@ -64,5 +70,11 @@ public class WizardController : MonoBehaviour
     {
         Instantiate(fireballPrefab, shootPos.position, this.transform.rotation);
         anim.SetBool("isAttacking", false);
+    }
+
+    private void death()
+    {
+        Instantiate(endDoorPrefab, this.transform.position + new Vector3(0, 1, 0), Quaternion.Euler(-90, 0, 0));
+        Destroy(gameObject);
     }
 }
