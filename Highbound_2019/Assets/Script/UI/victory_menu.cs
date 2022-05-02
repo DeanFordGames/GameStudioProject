@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class main_menu : MonoBehaviour
+public class victory_menu : MonoBehaviour
 {
-    public void PlayGame()
+    public void ReturnToMenu()
     {
-        SceneManager.LoadScene("StartLevel"); //loads the starting scene
+        SceneManager.LoadScene("MainMenu"); //loads the main menu scene
     }
 
     public void QuitGame()
     {
         Application.Quit(); //quits application
     }
-
-    
 }
