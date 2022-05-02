@@ -46,6 +46,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4496752627937025608}
   - component: {fileID: 4496752627937025609}
+  - component: {fileID: 7441626678424789330}
   m_Layer: 0
   m_Name: EnemyHealth
   m_TagString: Untagged
@@ -124,6 +125,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7441626678424789330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496752627937025611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c11d6d3e79d8d4e8e912a3cdb80de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 4496752628477963891}
+  health: {fileID: 4496752627937025609}
 --- !u!1 &4496752628477963891
 GameObject:
   m_ObjectHideFlags: 0
