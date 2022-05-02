@@ -29,7 +29,6 @@ public class EnemyHealth : MonoBehaviour
         ScoreSystem score = GameObject.Find("Score").GetComponent<ScoreSystem>();
         score.changeScore(points);
         Destroy(healtBarInstance);
-        Destroy(gameObject);
     }
 
     private void Update()
@@ -49,5 +48,10 @@ public class EnemyHealth : MonoBehaviour
             healtBarInstance.transform.position = gameObject.transform.GetChild(1).position;
             healtBarInstance.transform.rotation = Quaternion.Euler(0, this.transform.rotation.y, 0);
         }
+    }
+
+    public int getHealth()
+    {
+        return health;
     }
 }

@@ -21,17 +21,23 @@ public class FlyingEnemy : MonoBehaviour
 
     private float shootTimer = 2f;
 
+    private EnemyHealth health;
+
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         player = GameObject.Find("Player").transform;
         shootPoint = transform.GetChild(0);
+        health = gameObject.GetComponent<EnemyHealth>();
     }
 
     private void Update()
     {
         if (player != null)
         {
+            if (health.getHealth() <= 0)
+                Destroy(gameObject);
+
             distance = Vector3.Distance(gameObject.transform.position, player.position);
             if (flap == false)
             {

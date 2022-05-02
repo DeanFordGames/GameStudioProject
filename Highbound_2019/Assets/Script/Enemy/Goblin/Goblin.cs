@@ -15,17 +15,23 @@ public class Goblin : MonoBehaviour
     private float moveSpeed = 5f;
     private float attackMoveSpeed = 3f;
 
+    private EnemyHealth health;
+
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
         rb = gameObject.GetComponent<Rigidbody>();
+        health = gameObject.GetComponent<EnemyHealth>();
     }
 
     private void Update()
     {
         if (player == null)
             return;
+
+        if (health.getHealth() <= 0)
+            Destroy(gameObject);
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Sword And Shield Idle") && anim.GetBool("isAttacking") == true)
         {

@@ -1197,8 +1197,8 @@ GameObject:
   - component: {fileID: 7022244754215371213}
   - component: {fileID: 1508899004613626571}
   - component: {fileID: 58991322768569943}
-  - component: {fileID: 3318179288843487099}
   - component: {fileID: 5221123826912533698}
+  - component: {fileID: 3318179288843487099}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -1286,6 +1286,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.1, z: 0.3}
   m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &5221123826912533698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285910802411424267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15de1087c16f0be499ef056804ee1706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 4496752628477963891, guid: 949187a715ab8c94b9c19df2cb546cc0,
+    type: 3}
 --- !u!114 &3318179288843487099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,19 +1314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 5309985813962473108, guid: 2fa74a6d5517bb34ab2ae7e4c9bc24c2,
     type: 3}
---- !u!114 &5221123826912533698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5285910802411424267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15de1087c16f0be499ef056804ee1706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 4496752628477963891, guid: 949187a715ab8c94b9c19df2cb546cc0,
+  endDoorPrefab: {fileID: 5469575808698200206, guid: d5ee71ba0f656b745abeaa3f301e34a2,
     type: 3}
 --- !u!1 &5377080883948022096
 GameObject:

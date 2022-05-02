@@ -14,16 +14,28 @@ public class WizardController : MonoBehaviour
     private GameObject fireballPrefab;
     private Transform shootPos;
 
+    private EnemyHealth health;
+
+    [SerializeField]
+    private GameObject endDoorPrefab;
+
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
         shootPos = gameObject.transform.GetChild(3);
+        health = gameObject.GetComponent<EnemyHealth>();
     }
 
     private void Update()
     {
         float dis = Vector3.Distance(this.transform.position, player.position);
+
+        if(health.getHealth() <= 0)
+        {
+            Instantiate(endDoorPrefab, this.transform.position + new Vector3(0,1,0), Quaternion.Euler(-90,0,0));
+            Destroy(gameObject);
+        }
 
         if(dis < 10)
         {
