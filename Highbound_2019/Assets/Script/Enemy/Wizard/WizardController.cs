@@ -8,10 +8,17 @@ public class WizardController : MonoBehaviour
 
     private Transform player;
 
+    private float shootTimerReset = 2.5f;
+    private float shootTimer = 2.5f;
+    [SerializeField]
+    private GameObject fireballPrefab;
+    private Transform shootPos;
+
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
+        shootPos = gameObject.transform.GetChild(3);
     }
 
     private void Update()
@@ -21,6 +28,15 @@ public class WizardController : MonoBehaviour
         if(dis < 10)
         {
             rotateToPlayer();
+            if(shootTimer <= 0.0f)
+            {
+                anim.SetBool("isAttacking", true);
+                Invoke("shootFireball", 0.5f);
+                shootTimer = shootTimerReset;
+            }else
+            {
+                shootTimer -= Time.deltaTime;
+            }
         }
     }
 
@@ -30,5 +46,11 @@ public class WizardController : MonoBehaviour
         lookPos.y = 0.0f;
         var rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = rotation;
+    }
+
+    private void shootFireball()
+    {
+        Instantiate(fireballPrefab, shootPos.position, this.transform.rotation);
+        anim.SetBool("isAttacking", false);
     }
 }
