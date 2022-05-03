@@ -19,6 +19,7 @@ public class WizardController : MonoBehaviour
 
     [SerializeField]
     private GameObject endDoorPrefab;
+    private Transform endDoorPos;
 
     private void Start()
     {
@@ -74,7 +75,8 @@ public class WizardController : MonoBehaviour
 
     private void death()
     {
-        Instantiate(endDoorPrefab, this.transform.position + new Vector3(0, 1, 0), Quaternion.Euler(-90, 0, 0));
+        endDoorPos = GameObject.Find("EndDoorPos").transform;
+        Instantiate(endDoorPrefab, endDoorPos.position, endDoorPos.rotation);
         Destroy(gameObject);
     }
 }
