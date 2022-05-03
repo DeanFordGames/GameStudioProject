@@ -23517,7 +23517,7 @@ PrefabInstance:
     - target: {fileID: 8635899989107378115, guid: 2556ffe017735da4abaf95d72421789a,
         type: 3}
       propertyPath: m_Text
-      value: Collect (insert collectible here) to gain points
+      value: Collect gems to gain points
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2556ffe017735da4abaf95d72421789a, type: 3}
@@ -30460,7 +30460,7 @@ PrefabInstance:
     - target: {fileID: 6987713068335653965, guid: 14f7f52522d98134a9599c1c36a76dda,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 449.82
+      value: 404.1
       objectReference: {fileID: 0}
     - target: {fileID: 6987713068335653965, guid: 14f7f52522d98134a9599c1c36a76dda,
         type: 3}
@@ -30470,7 +30470,7 @@ PrefabInstance:
     - target: {fileID: 6987713068335653965, guid: 14f7f52522d98134a9599c1c36a76dda,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 425.03
+      value: 379.17
       objectReference: {fileID: 0}
     - target: {fileID: 6987713068335653965, guid: 14f7f52522d98134a9599c1c36a76dda,
         type: 3}
@@ -36435,7 +36435,7 @@ PrefabInstance:
     - target: {fileID: 2444647090652221701, guid: d458472b288353f49b8daa4e72ba8df8,
         type: 3}
       propertyPath: speed
-      value: 0.08
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2444647091022832451, guid: d458472b288353f49b8daa4e72ba8df8,
         type: 3}
