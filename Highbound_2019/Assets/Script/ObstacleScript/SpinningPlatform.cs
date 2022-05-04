@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpinningPlatform : MonoBehaviour
 {
-    private float spinSpeed = 0.1f;
+    private float spinSpeed = 0.2f;
 
     [SerializeField] private bool dir = false;
 
