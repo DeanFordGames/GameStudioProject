@@ -4856,6 +4856,7 @@ GameObject:
   - component: {fileID: 5670978350713967930}
   - component: {fileID: 8726998984816827039}
   - component: {fileID: 6843342912892399189}
+  - component: {fileID: 8386143236937954054}
   m_Layer: 0
   m_Name: Brazier
   m_TagString: Untagged
@@ -4928,6 +4929,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8386143236937954054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5041934191504969600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0672368, y: 1.0672367, z: 3.1275227}
+  m_Center: {x: 0, y: 0, z: 1.5590693}
 --- !u!1 &7448908623848818351
 GameObject:
   m_ObjectHideFlags: 0

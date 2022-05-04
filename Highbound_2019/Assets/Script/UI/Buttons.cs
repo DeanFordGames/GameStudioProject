@@ -9,4 +9,15 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Unpause()
+    {
+        gameObject.transform.parent.gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

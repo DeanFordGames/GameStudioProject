@@ -143,6 +143,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider c)
     {
+        if (c.gameObject.name == "Pipe")
+            return;
         isGrounded = true;
         jumpTime = 0.2f;
     }

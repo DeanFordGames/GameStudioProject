@@ -7,7 +7,7 @@ public class GoblinSword : MonoBehaviour
     [SerializeField]
     private Animator goblinAnim;
 
-    private int damage = 30;
+    private int damage = 15;
 
     private void OnTriggerEnter(Collider o)
     {
