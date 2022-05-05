@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 10
   m_LinearFogEnd: 611.5
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: bc77fd9a158229846bd5e7252adb924f,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -15559,7 +15560,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -2995156595472706359, guid: 08cd82030b6b23b418ef9fc2732bc864, type: 3}
-  - {fileID: -2145958606931178683, guid: 08cd82030b6b23b418ef9fc2732bc864, type: 3}
+  - {fileID: -2995156595472706359, guid: 08cd82030b6b23b418ef9fc2732bc864, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45287,6 +45288,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4324712472991673294, guid: ba522493d5ebbc24b8f923a4487175b0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866273634828863069, guid: ba522493d5ebbc24b8f923a4487175b0,
         type: 3}
       propertyPath: field of view
@@ -45369,6 +45375,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b,
         type: 2}
+    - target: {fileID: 9178268280731558891, guid: ba522493d5ebbc24b8f923a4487175b0,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba522493d5ebbc24b8f923a4487175b0, type: 3}
 --- !u!1 &5866273635214800477 stripped
@@ -45563,7 +45574,7 @@ PrefabInstance:
     - target: {fileID: 6141743182397500878, guid: 3dda077ec2f24664194f8e099f5b7aa3,
         type: 3}
       propertyPath: m_Name
-      value: PostProcessingFX
+      value: PostProcessingFX_StartLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dda077ec2f24664194f8e099f5b7aa3, type: 3}
