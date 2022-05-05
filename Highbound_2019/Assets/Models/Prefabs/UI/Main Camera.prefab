@@ -666,7 +666,7 @@ Canvas:
   m_GameObject: {fileID: 8477970979063057794}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 5866273634828863069}
   m_PlaneDistance: 3
   m_PixelPerfect: 0
@@ -818,12 +818,12 @@ PrefabInstance:
     - target: {fileID: 3869969157140664642, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 600
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 3869969157140664642, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3869969157140664642, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9,
         type: 3}
@@ -868,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 3869969157140664642, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -450
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 3869969157140664642, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9,
         type: 3}
@@ -908,12 +908,7 @@ PrefabInstance:
     - target: {fileID: 3869969157467053464, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3869969157467053464, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9,
-        type: 3}
-      propertyPath: m_FontData.m_FontStyle
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 306fdb4b3e3f1cc4b8c70d51a60fbac9, type: 3}
