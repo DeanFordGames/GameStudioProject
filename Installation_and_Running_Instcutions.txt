@@ -1,0 +1,11 @@
+Installation and Running Instructions
+
+Installation
+1. Extract all files in Highbound Build folder.
+2. To start the game open Highbound_menu.exe.
+
+Running Instructions
+Controls:
+	Walking = W:Fowards, A:Left, S:Backwards, D:Right.
+	Jumping = SpaceBar, Double jump = SpaceBar in midair.
+	Attacking = LeftMouseButton.
