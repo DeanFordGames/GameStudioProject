@@ -19,12 +19,6 @@ public class SpinningPlatform : MonoBehaviour
     private void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.name == "Player")
-            c.gameObject.transform.SetParent(gameObject.transform);
-    }
-
-    private void OnTriggerExit(Collider c)
-    {
-        if (c.gameObject.name == "Player")
-            c.gameObject.transform.parent = null;
+            c.gameObject.GetComponent<PlayerStats>().hitPlayer(5);
     }
 }
